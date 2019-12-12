@@ -4,7 +4,7 @@
 * Get the information about the receiver from a web interface
 * Send the information to a backend service
 * Send the email with the template to the receiver
+* Secure the backend service with SSL Certificate
 
 ## Modules used
 * smtplib - python3
-* 
