@@ -8,3 +8,6 @@
 
 ## Modules used
 * smtplib - python3
+* flask - python3
+* flask_sqlalchemy - python3
+* base64 - python3
