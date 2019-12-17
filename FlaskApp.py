@@ -6,9 +6,17 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///register.db"
 db = SQLAlchemy(app)
 
 class students(db.Model):
-    id = db.Column(db.String(20),primary_key=True,unique=True,nullable=False)
-    name = db.Column(db.String(200),unique=True,nullable=False)
-    cls = db.Column(db.String(50),nullable=False)
+    name = db.Column(db.String(2),nullable=False)
+    number = db.Column(db.String(10),nullable=False)
+    home = db.Column(db.String(3),nullable=False)
+    frachise = db.Column(db.string(4),nullable=False)
+    # replace the year with the datetime module
+    year = db.Column(db.String(4),nullable=False)
+    month = db.Column(db.String(2),nullable=False)
+    # gender
+    alpha = db.Column(db.String(1),nullable=False)
+    number = db.Column(db.Integer,nullable=False)
+    id = db.Column(db.String(18),primary_key=True,nullable=False)
 
 
     def __rep__(self):
@@ -16,7 +24,7 @@ class students(db.Model):
 
 @app.route("/",methods=["GET"])
 def message():
-    return "jvs testing"
+    return "nric"
 
 @app.route("/users")
-def 
+def

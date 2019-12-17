@@ -12,3 +12,9 @@
 * flask_sqlalchemy - python3
 * base64 - python3
 * json - python3
+
+## Database parameters
+* username
+* id
+* age
+* class
