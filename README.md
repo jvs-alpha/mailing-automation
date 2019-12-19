@@ -9,7 +9,7 @@
 ## Modules used
 * smtplib - python3
 * flask - python3
-* flask_sqlalchemy - python3
+* flask_
 * base64 - python3
 * json - python3
 
@@ -18,3 +18,7 @@
 * id
 * age
 * class
+
+## Procedure for creating the DB
+* create the database structure using mysql
+* create the api for the DB

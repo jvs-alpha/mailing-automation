@@ -1,30 +1,25 @@
-from flask import Flask,jsonify,request
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask,request
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///register.db"
-db = SQLAlchemy(app)
+app.config["MYSQL_HOST"] = "localhost"
+app.config["MUSQL_USER"] = "root"
+app.config["MUSQL_PASSWORD"] = "jesuslovesyou"
+app.config["MYSQL_DB"] = "nric"
+mysql = MySQL(app)
+@app.route("/",methods=["GET","POST"])
+def index():
+    if request.method == "POST":
+        data = request.get_json()
+        firstname = data["fname"]
+        lastname = data["lname"]
+        cur = mysql.connectio.cursor()
+        cur.execute("INSERT INTO Users(firstname,lastname) VALUE ('{}','{}')".format(firstname,lastname))
+        mysql.connection.commit()
+        cur.close()
+        return "success"
+    else:
+        return "NRIC SERVER"
 
-class students(db.Model):
-    name = db.Column(db.String(2),nullable=False)
-    number = db.Column(db.String(10),nullable=False)
-    home = db.Column(db.String(3),nullable=False)
-    frachise = db.Column(db.string(4),nullable=False)
-    # replace the year with the datetime module
-    year = db.Column(db.String(4),nullable=False)
-    month = db.Column(db.String(2),nullable=False)
-    # gender
-    alpha = db.Column(db.String(1),nullable=False)
-    number = db.Column(db.Integer,nullable=False)
-    id = db.Column(db.String(18),primary_key=True,nullable=False)
-
-
-    def __rep__(self):
-        return "<User %r>" % self.username
-
-@app.route("/",methods=["GET"])
-def message():
-    return "nric"
-
-@app.route("/users")
-def
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port="3000",debug=True)
