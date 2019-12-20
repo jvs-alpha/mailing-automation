@@ -9,7 +9,8 @@
 ## Modules used
 * smtplib - python3
 * flask - python3
-* flask_
+* flask_musqldb - python3
+* mysql-cohnnector - python3
 * base64 - python3
 * json - python3
 

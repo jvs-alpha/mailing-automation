@@ -15,6 +15,8 @@ def index():
         lastname = data["lname"]
         cur = mysql.connectio.cursor()
         cur.execute("INSERT INTO Users(firstname,lastname) VALUE ('{}','{}')".format(firstname,lastname))
+        pdat = cur.execute("SELECT * FROM Users")
+        print(pdat)
         mysql.connection.commit()
         cur.close()
         return "success"
