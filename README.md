@@ -15,10 +15,13 @@
 * json - python3
 
 ## Database parameters
-* username
+* firstname
+* lastname
 * id
-* age
-* class
+* home division
+* franchise
+* gender
+
 
 ## Procedure for creating the DB
 * create the database structure using mysql
