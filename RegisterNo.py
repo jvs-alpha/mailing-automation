@@ -5,6 +5,12 @@ import sys
 def RegisterNo(db,firstname,lastname,home,fran,gen):
     year = datetime.datetime.utcnow().year
     month = datetime.datetime.utcnow().month
+    # This is for finding the month length
+    if month < 10:
+        month = "0{}".format(month)
+    else:
+        month = str(month)
+    # Convertion of M,F to 01,00
     if gen == "M":
         gencode = "01"
     else:
@@ -13,7 +19,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
     cur.execute("SELECT * FROM Users")
     data = cur.fetchall()
     cur.close()
-    if data[-1][-3] == month or data[-1][-4] == year:
+    if data[-1][-3] != month or data[-1][-4] != year:
         alpha = "A"
         number = "001"
     elif data[-1][-2] == "Z" and int(data[-1][-1]) == 9999 and data[-1][-3] == month:
