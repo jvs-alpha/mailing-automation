@@ -3,6 +3,9 @@ import mysql.connector
 import sys
 from ReadDB import ReadDB
 
+def ptype(val):
+    print(type(val))
+
 def RegisterNo(db,firstname,lastname,home,fran,gen):
     year = datetime.datetime.utcnow().year
     month = datetime.datetime.utcnow().month
@@ -39,6 +42,13 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
             number = "0{}".format(number)
         else:
             number = str(number)
+    ptype(home)
+    ptype(fran)
+    ptype(year)
+    ptype(month)
+    ptype(gencode)
+    ptype(alpha)
+    ptype(number)
     registerno = "{}{}{}{}{}{}{}".format(home,fran,year,month,gencode,alpha,number)
     redata = [registerno,alpha,number]
     return redata
