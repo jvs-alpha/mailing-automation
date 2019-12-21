@@ -21,8 +21,12 @@
 * home division
 * franchise
 * gender
+* alpha
+* number
 
 
-## Procedure for creating the DB
-* create the database structure using mysql
-* create the api for the DB
+## TODO
+1. Recreate the DB structure with all the elements
+2. Create the RegisterNo script
+  1. The RegisterNo function must return a list containing [register no,alpha,number]
+3. Alter the DB APi for the new DB

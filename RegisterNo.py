@@ -13,8 +13,8 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
     cur.close()
     if data[-1][-1] == month or date[-1][-2] == year:
         alpha = "A"
-    else:
         number = "001"
+    else:
 
 
 if __name__ == "__main__":
