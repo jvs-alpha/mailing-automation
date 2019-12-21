@@ -32,9 +32,8 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
 
 if __name__ == "__main__":
     db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="jesuslovesyou",
-        database="nric"
-    )
+    host="localhost",
+    user="root",
+    passwd="jesuslovesyou",
+    database="nric")
     print(RegisterNo(db,sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5]))
