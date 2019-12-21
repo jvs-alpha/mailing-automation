@@ -9,7 +9,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
         gencode = "01"
     else:
         gencode = "00"
-    cur = db.corsor()
+    cur = db.cursor()
     data = cur.execute("SELECT * FROM Users")
     cur.close()
     if data[-1][-3] == month or date[-1][-4] == year:
