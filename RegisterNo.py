@@ -12,7 +12,8 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
     cur = db.cursor()
     cur.execute("SELECT * FROM Users")
     data = cur.fetchall()
-    if data[-1][-3] == month or date[-1][-4] == year:
+    cur.close()
+    if data[-1][-3] == month or data[-1][-4] == year:
         alpha = "A"
         number = "001"
     elif data[-1][-2] == "Z" and int(data[-1][-1]) == 9999 and data[-1][-3] == month:
@@ -28,7 +29,6 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
         number += 1
     registerno = "".join(home,fran,str(year),str(month),gencode,str(alpha),str(number))
     redata = [registerno,alpha,number]
-    cur.close()
     return redata
 
 
