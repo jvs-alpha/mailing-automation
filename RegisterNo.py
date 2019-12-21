@@ -27,7 +27,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
         alpha = data[-1][-2]
         number = int(data[-1][-1])
         number += 1
-    registerno = "{}{}{}{}{}{}{}{}".format(home,fran,year,month,gencode,alpha,number)
+    registerno = "{}{}{}{}{}{}{}".format(home,fran,year,month,gencode,alpha,number)
     redata = [registerno,alpha,number]
     return redata
 
