@@ -30,3 +30,6 @@
 2. Create the RegisterNo script
 3. The RegisterNo function must return a list containing [register no,alpha,number]
 4. Alter the DB APi for the new DB
+
+## TO REMEMBER
+* The Value received by the api will be M,F but the values in the DB will be 01,00
