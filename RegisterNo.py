@@ -35,7 +35,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
             number = "000{}".format(number)
         elif number >= 10 and number < 100:
             number = "00{}".format(number)
-        elif numer >= 100 and number < 1000:
+        elif number >= 100 and number < 1000:
             number = "0{}".format(number)
         else:
             number = str(number)
