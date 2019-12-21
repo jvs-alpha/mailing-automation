@@ -32,3 +32,6 @@
 
 ## TO REMEMBER
 * The Value received by the api will be M,F but the values in the DB will be 01,00
+
+## Modules Function
+* ReadDB.py - Reading the data from the DB
