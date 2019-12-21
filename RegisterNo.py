@@ -1,6 +1,7 @@
 import datetime
 import mysql.connector
 import sys
+from ReadDB import ReadDB
 
 def RegisterNo(db,firstname,lastname,home,fran,gen):
     year = datetime.datetime.utcnow().year
@@ -15,10 +16,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
         gencode = "01"
     else:
         gencode = "00"
-    cur = db.cursor()
-    cur.execute("SELECT * FROM Users")
-    data = cur.fetchall()
-    cur.close()
+    data = ReadDB(db)
     if data[-1][-3] != month or data[-1][-4] != year:
         alpha = "A"
         number = "001"
