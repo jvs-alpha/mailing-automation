@@ -21,6 +21,8 @@
 * home division
 * franchise
 * gender
+* year
+* month
 * alpha
 * number
 
