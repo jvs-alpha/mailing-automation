@@ -26,7 +26,6 @@
 
 
 ## TODO
-1. Recreate the DB structure with all the elements
 2. Create the RegisterNo script
 3. The RegisterNo function must return a list containing [register no,alpha,number]
 4. Alter the DB APi for the new DB
