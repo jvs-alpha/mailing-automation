@@ -21,7 +21,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
     elif int(data[-1][-1]) == 9999:
         ordnum = ord(data[-1][-2])
         ordnum += 1
-        alpha = chr(ordnumber)
+        alpha = chr(ordnum)
         number = "0001"
     else:
         alpha = data[-1][-2]
