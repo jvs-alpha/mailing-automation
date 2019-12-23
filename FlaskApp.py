@@ -27,13 +27,13 @@ def index():
         fran = data["fran"]
         gen = data["gen"]
         rdata = RegisterNo(db,home,fran,gen)
+        print(rdata)
         id = rdata[0]
         gencode = rdata[1]
         alpha = rdata[2]
         number = rdata[3]
         cur = mysqlf.connection.cursor()
         cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
-        rdata = []
         mysqlf.connection.commit()
         cur.close()
         return "success"
