@@ -11,6 +11,11 @@ app.config["MYSQL_DB"] = "nric"
 mysql = MySQL(app)
 year = datetime.datetime.utcnow().year
 month = datetime.datetime.utcnow().month
+db = mysql.connector.connect(
+host="localhost",
+user="root",
+passwd="jesuslovesyou",
+database="nric")
 @app.route("/",methods=["GET","POST"])
 def index():
     if request.method == "POST":
@@ -20,7 +25,7 @@ def index():
         home = data["home"]
         fran = data["fran"]
         gen = data["gen"]
-        rdata = RegisterNo(mysql,home,fran,gen)
+        rdata = RegisterNo(db,home,fran,gen)
         id = rdata[0]
         gencode = rdata[1]
         alpha = rdata[2]
