@@ -20,7 +20,7 @@ def index():
         home = data["home"]
         fran = data["fran"]
         gen = data["gen"]
-        rdata = RegisterNo(db,home,fran,gen)
+        rdata = RegisterNo(home,fran,gen)
         print(rdata)
         id = rdata[0]
         gencode = rdata[1]
