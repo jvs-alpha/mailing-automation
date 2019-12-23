@@ -1,4 +1,6 @@
 import cv2
+import os
+from PIL import Image
 import numpy as np
 import json
 import sys
@@ -9,7 +11,11 @@ def Certificate(image,posfile,name):
     json_file = open(posfile,"r+")
     pos = json.load(json_file)
     cv2.putText(img,name,(pos["name"]["x"],pos["name"]["y"]),cv2.FONT_HERSHEY_TRIPLEX,2,(0,0,0),2,cv2.LINE_AA)
-    cv2.imwrite("images/test.jpg",img)
+    #cv2.imwrite("images/test.jpg",img)
+    path = os.getcwd()
+    img = Image.fromarray(img)
+    img = img.convert("RGB")
+    img.save(r"{}/images/test.pdf".format(path))
 
 if __name__ == "__main__":
     if(len(sys.argv) < 4):
