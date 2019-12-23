@@ -1,6 +1,5 @@
 from flask import Flask,request
 from flask_mysqldb import MySQL
-import mysql.connector
 from RegisterNo import *
 import datetime
 
@@ -12,11 +11,6 @@ app.config["MYSQL_DB"] = "nric"
 mysqlf = MySQL(app)
 year = datetime.datetime.utcnow().year
 month = datetime.datetime.utcnow().month
-db = mysql.connector.connect(
-host="localhost",
-user="root",
-passwd="jesuslovesyou",
-database="nric")
 @app.route("/",methods=["GET","POST"])
 def index():
     if request.method == "POST":

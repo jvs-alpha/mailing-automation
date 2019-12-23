@@ -4,7 +4,12 @@ import sys
 from ReadDB import ReadDB
 
 
-def RegisterNo(db,home,fran,gen):
+def RegisterNo(home,fran,gen):
+    db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    passwd="jesuslovesyou",
+    database="nric")
     year = datetime.datetime.utcnow().year
     month = datetime.datetime.utcnow().month
     # This is for finding the month length
@@ -46,9 +51,4 @@ def RegisterNo(db,home,fran,gen):
 
 
 if __name__ == "__main__":
-    db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="jesuslovesyou",
-    database="nric")
-    print(RegisterNo(db,sys.argv[1],sys.argv[2],sys.argv[3]))
+    print(RegisterNo(sys.argv[1],sys.argv[2],sys.argv[3]))
