@@ -33,6 +33,7 @@ def index():
         number = rdata[3]
         cur = mysqlf.connection.cursor()
         cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
+        rdata = []
         mysqlf.connection.commit()
         cur.close()
         return "success"
