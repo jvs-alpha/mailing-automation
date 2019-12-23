@@ -33,8 +33,6 @@ def index():
         number = rdata[3]
         cur = mysqlf.connection.cursor()
         cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}'.'{}','{}','{}','{}')".format(firstname,lastname,id,home,fran,gencode,year,month,alpha,number))
-        pdat = cur.execute("SELECT * FROM Users")
-        print(pdat)
         mysql.connection.commit()
         cur.close()
         return "success"
