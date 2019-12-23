@@ -9,7 +9,7 @@ app.config["MYSQL_HOST"] = "localhost"
 app.config["MUSQL_USER"] = "root"
 app.config["MUSQL_PASSWORD"] = "jesuslovesyou"
 app.config["MYSQL_DB"] = "nric"
-mysql = MySQL(app)
+mysqlf = MySQL(app)
 year = datetime.datetime.utcnow().year
 month = datetime.datetime.utcnow().month
 db = mysql.connector.connect(
@@ -31,7 +31,7 @@ def index():
         gencode = rdata[1]
         alpha = rdata[2]
         number = rdata[3]
-        cur = mysql.connection.cursor()
+        cur = mysqlf.connection.cursor()
         cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}'.'{}','{}','{}','{}')".format(firstname,lastname,id,home,fran,gencode,year,month,alpha,number))
         pdat = cur.execute("SELECT * FROM Users")
         print(pdat)
