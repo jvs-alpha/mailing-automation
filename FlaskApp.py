@@ -4,6 +4,7 @@ from RegisterNo import *
 import datetime
 
 app = Flask(__name__)
+# flask_mysqldb object cretion function
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = "jesuslovesyou"
@@ -21,7 +22,6 @@ def index():
         fran = data["fran"]
         gen = data["gen"]
         rdata = RegisterNo(home,fran,gen)
-        print(rdata)
         id = rdata[0]
         gencode = rdata[1]
         alpha = rdata[2]

@@ -5,6 +5,7 @@ from ReadDB import ReadDB
 
 
 def RegisterNo(home,fran,gen):
+    # For every read we need to refresh the database so we need to connect to it every time
     db = mysql.connector.connect(
     host="localhost",
     user="root",
