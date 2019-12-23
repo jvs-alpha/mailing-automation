@@ -4,7 +4,7 @@ import sys
 from ReadDB import ReadDB
 
 
-def RegisterNo(db,firstname,lastname,home,fran,gen):
+def RegisterNo(db,home,fran,gen):
     year = datetime.datetime.utcnow().year
     month = datetime.datetime.utcnow().month
     # This is for finding the month length
@@ -41,7 +41,7 @@ def RegisterNo(db,firstname,lastname,home,fran,gen):
         else:
             number = str(number)
     registerno = "{}{}{}{}{}{}{}".format(home,fran,year,month,gencode,alpha,number)
-    redata = [registerno,alpha,number]
+    redata = [registerno,gencode,alpha,number]
     return redata
 
 
