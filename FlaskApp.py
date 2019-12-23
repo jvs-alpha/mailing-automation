@@ -6,8 +6,8 @@ import datetime
 
 app = Flask(__name__)
 app.config["MYSQL_HOST"] = "localhost"
-app.config["MUSQL_USER"] = "root"
-app.config["MUSQL_PASSWORD"] = "jesuslovesyou"
+app.config["MYSQL_USER"] = "root"
+app.config["MYSQL_PASSWORD"] = "jesuslovesyou"
 app.config["MYSQL_DB"] = "nric"
 mysqlf = MySQL(app)
 year = datetime.datetime.utcnow().year
