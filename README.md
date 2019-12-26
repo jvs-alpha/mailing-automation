@@ -28,7 +28,6 @@
 
 
 ## TODO
-* Change the ReadDB.py to read only the last value
 * Modify the MailService to send pdf
 * Modify the Certificate.py to accept two names insted of one
 
