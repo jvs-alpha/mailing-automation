@@ -28,6 +28,7 @@
 
 
 ## TODO
+* add the superuser and fran admin users
 * Check the RegisterNo is working all the ways
 * Modify the MailService to send pdf
 * Modify the Certificate.py to accept two names insted of one and the RegNo
