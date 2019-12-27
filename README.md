@@ -28,8 +28,12 @@
 
 
 ## TODO
+* Check the RegisterNo is working all the ways
 * Modify the MailService to send pdf
-* Modify the Certificate.py to accept two names insted of one
+* Modify the Certificate.py to accept two names insted of one and the RegNo
+* make the DB API more secure
+* Insert the data to the server
+* Learn about neo4js
 
 ## TO REMEMBER
 * The Value received by the api will be M,F but the values in the DB will be 01,00
