@@ -1,9 +1,9 @@
 import mysql.connector
 
-def ReadDB(db):
+def ReadDB(db,table):
     cur = db.cursor()
-    cur.execute("SELECT * FROM Users ORDER BY No DESC LIMIT 1")
     data = cur.fetchall()
+    cur.execute("SELECT * FROM {} ORDER BY No DESC LIMIT 1".format(table))
     cur.close()
     return data
 
@@ -13,5 +13,6 @@ if __name__ == "__main__":
     user="root",
     passwd="jesuslovesyou",
     database="nric")
-    for i in ReadDB(db):
+    table = scanf("Enter the Table Name:\c")
+    for i in ReadDB(db,table):
         print(i)

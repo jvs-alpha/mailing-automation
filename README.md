@@ -36,6 +36,10 @@
 * Insert the data to the server
 * Learn about neo4js
 
+## WORKING ON
+* changing the system from uni-user to multi-user
+* ReadDB is in progress
+
 ## TO REMEMBER
 * The Value received by the api will be M,F but the values in the DB will be 01,00
 
