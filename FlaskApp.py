@@ -1,15 +1,8 @@
 from flask import Flask,request
-from flask_mysqldb import MySQL
 from RegisterNo import *
 import datetime
 
 app = Flask(__name__)
-# flask_mysqldb object cretion function
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "jesuslovesyou"
-app.config["MYSQL_DB"] = "nric"
-mysqlf = MySQL(app)
 year = datetime.datetime.utcnow().year
 month = datetime.datetime.utcnow().month
 @app.route("/",methods=["GET","POST"])
@@ -26,9 +19,9 @@ def index():
         gencode = rdata[1]
         alpha = rdata[2]
         number = rdata[3]
-        cur = mysqlf.connection.cursor()
+        cur = mysql.connection.cursor()
         cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
-        mysqlf.connection.commit()
+        mysql.connection.commit()
         cur.close()
         return "success"
     else:

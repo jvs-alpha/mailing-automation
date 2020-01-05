@@ -4,12 +4,12 @@ import sys
 from ReadDB import ReadDB
 
 
-def RegisterNo(home,fran,gen):
+def RegisterNo(user,passwd,table,home,fran,gen):
     # For every read we need to refresh the database so we need to connect to it every time
     db = mysql.connector.connect(
     host="localhost",
-    user="root",
-    passwd="jesuslovesyou",
+    user=user,
+    passwd=passwd,
     database="nric")
     year = datetime.datetime.utcnow().year
     month = datetime.datetime.utcnow().month
@@ -23,10 +23,10 @@ def RegisterNo(home,fran,gen):
         gencode = "01"
     else:
         gencode = "00"
-    data = ReadDB(db)
+    data = ReadDB(db,table)
     if str(data[-1][-3]) != month or int(data[-1][-4]) != year:
         alpha = "A"
-        number = "001"
+        number = "0001"
     elif data[-1][-2] == "Z" and int(data[-1][-1]) == 9999 and data[-1][-3] == month:
         return("Reached the limit")
     elif int(data[-1][-1]) == 9999:
@@ -52,4 +52,4 @@ def RegisterNo(home,fran,gen):
 
 
 if __name__ == "__main__":
-    print(RegisterNo(sys.argv[1],sys.argv[2],sys.argv[3]))
+    print(RegisterNo(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6]))
