@@ -19,13 +19,15 @@ def index():
         gencode = rdata[1]
         alpha = rdata[2]
         number = rdata[3]
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO Users(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
-        mysql.connection.commit()
-        cur.close()
+        db = mysql.connector.connect(
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        database="nric")
+        check = WriteDB(db,table,firstname,secondname,id,home,fran,gencode,year,month,alpha,number)
         return "success"
     else:
         return "NRIC SERVER"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port="3000",debug=True)
+    app.run(host="0.0.0.0",port="3000",debug=True,threaded=True)

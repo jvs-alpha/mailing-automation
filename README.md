@@ -28,11 +28,11 @@
 
 
 ## TODO
-* add the superuser and fran admin users
-* Check the RegisterNo is working all the ways
+* Modify the FlaskApp to get username and password
+* write a hashing function for password
+* Make the DB API more secure
 * Modify the MailService to send pdf
 * Modify the Certificate.py to accept two names insted of one and the RegNo
-* make the DB API more secure
 * Insert the data to the server
 * Learn about neo4js
 

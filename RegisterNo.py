@@ -52,4 +52,7 @@ def RegisterNo(user,passwd,table,home,fran,gen):
 
 
 if __name__ == "__main__":
-    print(RegisterNo(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6]))
+    if len(sys.argv) < 7:
+        print("Usage: python3 RegisterNo.py <user> <passwd> <table> <home> <fran> <gen>")
+    else:
+        print(RegisterNo(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6]))
