@@ -1,4 +1,6 @@
 from flask import Flask,request
+import mysql.connector
+from WriteDB import *
 from RegisterNo import *
 import datetime
 
