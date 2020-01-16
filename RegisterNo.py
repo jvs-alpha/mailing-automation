@@ -19,15 +19,15 @@ def RegisterNo(user,passwd,table,home,fran,gen):
     else:
         month = str(month)
     # Convertion of M,F to 01,00
-    if gen == "M":
+    if gen == "Male":
         gencode = "01"
     else:
         gencode = "00"
     data = ReadDB(db,table)
-    if str(data[-1][-3]) != month or int(data[-1][-4]) != year:
+    if int(data[-1][-3]) != int(month) or int(data[-1][-4]) != year:
         alpha = "A"
         number = "0001"
-    elif data[-1][-2] == "Z" and int(data[-1][-1]) == 9999 and data[-1][-3] == month:
+    elif data[-1][-2] == "Z" and int(data[-1][-1]) == 9999 and int(data[-1][-3]) == int(month):
         return("Reached the limit")
     elif int(data[-1][-1]) == 9999:
         ordnum = ord(data[-1][-2])

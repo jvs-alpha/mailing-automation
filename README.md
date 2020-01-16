@@ -29,8 +29,6 @@
 
 ## TODO
 * Wirite the script for Automation
-* Modify the FlaskApp to get username and password
-* write a hashing function for password
 * Make the DB API more secure
 * Insert the data to the server
 * Learn about neo4js
