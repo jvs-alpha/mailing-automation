@@ -2,11 +2,14 @@ import mysql.connector
 import sys
 
 def WriteDB(db,table,firstname,secondname,id,home,fran,gencode,year,month,alpha,number):
-    cur = db.cursor()
-    cur.execute("INSERT INTO {}(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(table,firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
-    cur.close()
-    db.commit()
-    return True
+    try:
+        cur = db.cursor()
+        cur.execute("INSERT INTO {}(firstname,secondname,id,home,franchise,gender,year,month,alpha,number) VALUE ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(table,firstname,secondname,id,home,fran,gencode,year,month,alpha,number))
+        cur.close()
+        db.commit()
+        return True
+    except:
+        return False
 
 
 if __name__ == "__main__":

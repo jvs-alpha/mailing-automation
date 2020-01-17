@@ -3,7 +3,7 @@ from email.message import EmailMessage
 import sys
 import os
 
-def send_mail(recv,id):
+def MailService(recv,id):
     try:
         msg = EmailMessage()
         msg["Subject"] = "test"

@@ -37,8 +37,16 @@ def SendScript(csv_raw,user,passwd,table,home,fran):
         alpha = rdata[2]
         number = rdata[3]
         check = WriteDB(db,table,firstname,secondname,id,home,fran,gencode,year,month,alpha,number)
-        print("Writen Name: {} ID: {}".format(firstname,id))
-        Certificate("{} {}".foramt(firstname,secondname),id)
+        if check:
+            print("Writen Name: {} ID: {}".format(firstname,id))
+        else:
+            print("Data not writen Name: {}".format(firstname))
+        if id:
+            Certificate("{} {}".format(firstname,secondname),id)
+            print("Certificate Created for {}".format(id))
+            MailService(data[2],id)
+            print("Mail Sent to {}".format(data[2]))
+        print()
     f.close()
     db.close()
 if __name__ == "__main__":
