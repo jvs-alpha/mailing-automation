@@ -23,7 +23,12 @@ def RegisterNo(user,passwd,table,home,fran,gen):
         gencode = "01"
     else:
         gencode = "00"
+    # This is for reading the alst entry of the database
     data = ReadDB(db,table)
+    # data[-1][-3] = last entered month
+    # data[1][-4] = last enteres year
+    # data[1][-2] = last enteres alpha
+    # data[1][-1] = last enteres number
     if int(data[-1][-3]) != int(month) or int(data[-1][-4]) != year:
         alpha = "A"
         number = "0001"

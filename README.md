@@ -21,12 +21,14 @@
 
 
 ## TODO
-* Make the DB API more secure
+* Check if we need to make the database local or on differnent servers
+* Get a Gmail for the company and make the script to send email through it
+* Make a docker image of the API
 * Insert the data to the server
 * Learn about neo4js
 
 ## WORKING ON
-* FlaskApp in progress
+
 
 ## TO REMEMBER
 * The Value received by the api will be Male,Female but the values in the DB will be 01,00

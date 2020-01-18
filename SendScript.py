@@ -44,8 +44,11 @@ def SendScript(csv_raw,user,passwd,table,home,fran):
         if id:
             Certificate("{} {}".format(firstname,secondname),id)
             print("Certificate Created for {}".format(id))
-            MailService(data[2],id)
-            print("Mail Sent to {}".format(data[2]))
+            mailcheck = MailService(data[2],id)
+            if mailcheck:
+                print("Mail Sent to {}".format(data[2]))
+            else:
+                print("mail not sent to the {}".format(data[2]))
         print()
     f.close()
     db.close()

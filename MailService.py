@@ -20,8 +20,9 @@ def MailService(recv,id):
         mail.login(os.environ.get("EMAIL_USER"),os.environ.get("EMAIL_PASSWD"))
         mail.send_message(msg)
         mail.quit()
-    except SMTPException:
-        print("mailing service not working")
+        return True
+    except:
+        return False
 
 
 if __name__ == "__main__":
@@ -30,4 +31,4 @@ if __name__ == "__main__":
         print("Try:")
         print("python mailservice.py <receiver_email> <Register_ID>")
         sys.exit(0)
-    send_mail(sys.argv[1],sys.argv[2])
+    MailService(sys.argv[1],sys.argv[2])
