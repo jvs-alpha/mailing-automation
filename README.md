@@ -21,6 +21,7 @@
 
 
 ## TODO
+* Modify the No column in the server DB to be autoincrement
 * Check if we need to make the database local or on differnent servers
 * Get a Gmail for the company and make the script to send email through it
 * Make a docker image of the API
