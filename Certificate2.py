@@ -1,0 +1,21 @@
+import cv2
+import os
+from PIL import Image
+import json
+import sys
+
+
+def Certificate2(name,id):
+    img = cv2.imread("cert2.jpg")
+    with open("Positions/NamePosition.json","r") as json_file:
+        name_pos = json.load(json_file)
+    with open("Positions/IDPosition.json","r") as json_file:
+        id_pos = json.load(json_file)
+    cv2.putText(img,"NAME : {}".format(name),(name_pos["name"]["x"],name_pos["name"]["y"]),cv2.FONT_HERSHEY_TRIPLEX,2,(0,0,0),2,cv2.LINE_AA)
+    cv2.putText(img,id,(id_pos["name"]["x"],id_pos["name"]["y"]),cv2.FONT_HERSHEY_TRIPLEX,.80,(0,0,0),1,cv2.LINE_AA)
+    img = Image.fromarray(img)
+    img = img.convert("RGB")
+    img.save(r"{}/images/{}.pdf".format(os.getcwd(),id))
+
+if __name__ == "__main__":
+    Certificate(sys.argv[1],sys.argv[2])
