@@ -1,4 +1,4 @@
-from Certificate2 import *
+from Certificate import *
 import csv
 
 if __name__ == "__main__":
@@ -12,5 +12,5 @@ if __name__ == "__main__":
             cid = "WS02202000"+str(check)
         else:
             cid = "WS0220200"+str(check)
-        Certificate2(data[1],cid)
+        Certificate(data[1],cid,"05.02.2020-06.02.2020")
         print("Certificate Generated for {} : {}".format(data[1],cid))
